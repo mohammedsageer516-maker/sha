@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Little Surprise for Shahista ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-ring loader-ring--2"></div>
+      <div class="loader-ring loader-ring--3"></div>
+      <p class="loader-text">Preparing something magical for you…</p>
+      <div class="loader-hearts">
+        <span>💜</span><span>✦</span><span>💜</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CURSOR GLOW -->
+  <div id="cursor-glow" class="cursor-glow"></div>
+  <div id="cursor-dot" class="cursor-dot"></div>
+
+  <!-- CANVAS -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- FLOATING HEARTS -->
+  <div id="floating-hearts" class="floating-hearts" aria-hidden="true"></div>
+
+  <!-- CONFETTI LAYER -->
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+
+  <!-- TOP CONTROLS -->
+  <header class="top-bar glass-bar">
+    <div class="top-bar__logo dancing">💜 Shahista 💜</div>
+    <div class="top-bar__controls">
+      <button id="theme-toggle" class="icon-btn" title="Toggle day/night mode" aria-label="Toggle theme">
+        <span id="theme-icon">🌙</span>
+      </button>
+      <button id="music-toggle" class="icon-btn" title="Toggle background music" aria-label="Toggle music">
+        <span id="music-icon">🎵</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- BACKGROUND AUDIO -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="music/background.mp3" type="audio/mpeg" />
+  </audio>
+
+  <main id="main-content">
+
+    <!-- HERO / WELCOME -->
+    <section class="section hero-section" id="welcome">
+      <div class="crown-badge fade-in">👑 The Best Girl in the World 👑</div>
+      <h1 class="hero-name fade-in delay-1">Shahista Taj</h1>
+      <div class="hero-stars fade-in delay-1">
+        <span>💜</span><span>✦</span><span>🌟</span><span>✦</span><span>💜</span>
+      </div>
+      <div class="hero-card glass-card fade-in delay-2">
+        <p class="hero-greeting">Hey, you 😊</p>
+        <p>This isn't a love confession.</p>
+        <p>I simply wanted to make something special — because you are, without any doubt, one of the most <em>wonderful people</em> this world has ever seen.</p>
+        <p>You deserve all the purple skies, all the sparkle, and every good thing life can offer.</p>
+        <p>I hope this little surprise makes you smile today. 💜</p>
+      </div>
+      <div class="scroll-hint fade-in delay-3">
+        <span class="scroll-hint__arrow">↓</span>
+        <span>scroll to discover</span>
+      </div>
+    </section>
+
+    <!-- BEST GIRL IN THE WORLD DECLARATION -->
+    <section class="section declaration-section fade-in-section" id="declaration">
+      <div class="declaration-card glass-card">
+        <div class="declaration-crown">👑</div>
+        <h2 class="declaration-title">Officially Declared</h2>
+        <p class="declaration-text">After careful observation of all the wonderful humans in this world…</p>
+        <div class="declaration-highlight">
+          Shahista Taj is officially<br />the <span class="purple-glow-text">Best Girl in the World</span>
+        </div>
+        <p class="declaration-sub">No arguments accepted. This is final. 💜</p>
+        <div class="declaration-seal">✦ Certified with love ✦</div>
+      </div>
+    </section>
+
+    <!-- BIRTHDAY RIBBON -->
+    <section class="section birthday-section fade-in-section" id="birthday">
+      <div class="birthday-ribbon glass-card">
+        <span class="birthday-ribbon__star">✦</span>
+        <p class="birthday-ribbon__text">
+          Born on <strong>5th July</strong> — the day the universe decided to gift the world its most precious gem.
+        </p>
+        <span class="birthday-ribbon__star">✦</span>
+      </div>
+    </section>
+
+    <!-- WHY SHE'S THE BEST (new section) -->
+    <section class="section best-section fade-in-section" id="best">
+      <h2 class="section-title">Why She's the Best 💜</h2>
+      <p class="section-sub">Let us count the ways…</p>
+      <div class="best-grid">
+        <div class="best-card glass-card" data-delay="0">
+          <div class="best-card__icon">💜</div>
+          <h3>Heart of Pure Gold</h3>
+          <p>Your kindness isn't something you perform — it flows out of you naturally, like a river that never runs dry.</p>
+        </div>
+        <div class="best-card glass-card" data-delay="100">
+          <div class="best-card__icon">👑</div>
+          <h3>Born to Shine</h3>
+          <p>You carry a quiet regality that makes every room feel more elegant. You don't need a crown — you already wear one.</p>
+        </div>
+        <div class="best-card glass-card" data-delay="200">
+          <div class="best-card__icon">🌟</div>
+          <h3>One in a Billion</h3>
+          <p>Out of 8 billion people on this planet, there is no one — not a single soul — quite like Shahista Taj. That's a fact.</p>
+        </div>
+        <div class="best-card glass-card" data-delay="300">
+          <div class="best-card__icon">🦋</div>
+          <h3>Free Spirit</h3>
+          <p>You have the rare gift of being completely, beautifully yourself. That kind of authenticity is magnetic.</p>
+        </div>
+        <div class="best-card glass-card" data-delay="400">
+          <div class="best-card__icon">✨</div>
+          <h3>Living Sunshine</h3>
+          <p>Even on cloudy days, you are somebody's reason to smile. You're the kind of person poems are written about.</p>
+        </div>
+        <div class="best-card glass-card" data-delay="500">
+          <div class="best-card__icon">🌸</div>
+          <h3>Gentle Strength</h3>
+          <p>You hold your softness and your strength in perfect balance. That's not easy — and yet you make it look effortless.</p>
+        </div>
+        <div class="best-card glass-card" data-delay="600">
+          <div class="best-card__icon">💫</div>
+          <h3>Dream Chaser</h3>
+          <p>Whatever you set your mind to, you pursue it with a fire that inspires everyone around you. Never stop dreaming.</p>
+        </div>
+        <div class="best-card glass-card" data-delay="700">
+          <div class="best-card__icon">🎀</div>
+          <h3>Effortlessly Lovely</h3>
+          <p>You don't try to be wonderful — you simply are. That's the most beautiful thing about you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THINGS THAT MAKE YOU AWESOME -->
+    <section class="section awesome-section fade-in-section" id="awesome">
+      <h2 class="section-title">Things That Make You Awesome</h2>
+      <p class="section-sub">Just a few of many… 💜</p>
+      <div class="awesome-grid">
+        <div class="awesome-card glass-card" data-delay="0">
+          <div class="awesome-card__icon">😊</div>
+          <h3>Your Smile</h3>
+          <p>It's the kind of smile that makes a room feel warmer without trying. Truly rare.</p>
+        </div>
+        <div class="awesome-card glass-card" data-delay="100">
+          <div class="awesome-card__icon">💜</div>
+          <h3>Your Kindness</h3>
+          <p>You give it so naturally, like it's the most effortless thing in the world. It isn't — but you make it seem so.</p>
+        </div>
+        <div class="awesome-card glass-card" data-delay="200">
+          <div class="awesome-card__icon">✨</div>
+          <h3>Your Positive Vibe</h3>
+          <p>People leave conversations with you feeling lighter. That's a superpower few people have.</p>
+        </div>
+        <div class="awesome-card glass-card" data-delay="300">
+          <div class="awesome-card__icon">👑</div>
+          <h3>Your Confidence</h3>
+          <p>The quiet, grounded kind — not loud, just unmistakably and beautifully there.</p>
+        </div>
+        <div class="awesome-card glass-card" data-delay="400">
+          <div class="awesome-card__icon">🦋</div>
+          <h3>Your Uniqueness</h3>
+          <p>There is literally no one else quite like you. The world would not be the same without you in it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPRECIATION QUOTE -->
+    <section class="section quote-section fade-in-section" id="appreciation">
+      <div class="quote-block glass-card">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">
+          Some people are so rare,<br />so beautiful in the way they exist —<br />that the world becomes a different place<br />just because they're in it.
+        </p>
+        <div class="quote-line"></div>
+        <p class="quote-sub">You are one of those people, Shahista.</p>
+      </div>
+    </section>
+
+    <!-- PURPLE PROMISE SECTION -->
+    <section class="section promise-section fade-in-section" id="promise">
+      <h2 class="section-title">A Promise in Purple 💜</h2>
+      <div class="promise-grid">
+        <div class="promise-item glass-card">
+          <span class="promise-emoji">💜</span>
+          <p>You will always be appreciated, even on the days you don't feel it.</p>
+        </div>
+        <div class="promise-item glass-card">
+          <span class="promise-emoji">🌟</span>
+          <p>Your dreams are valid. Every single one of them.</p>
+        </div>
+        <div class="promise-item glass-card">
+          <span class="promise-emoji">✨</span>
+          <p>The best is yet to come for a soul as beautiful as yours.</p>
+        </div>
+        <div class="promise-item glass-card">
+          <span class="promise-emoji">🦋</span>
+          <p>You are never too much and always more than enough.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GIFT BOX -->
+    <section class="section gift-section fade-in-section" id="gift">
+      <h2 class="section-title">A Little Something for You 💜</h2>
+      <p class="section-sub">Tap the box to open it 🎁</p>
+
+      <div class="gift-wrapper">
+        <div id="gift-box" class="gift-box" role="button" aria-label="Open gift" tabindex="0">
+          <div class="gift-box__lid">
+            <div class="gift-box__ribbon-h"></div>
+            <div class="gift-box__bow">
+              <div class="gift-box__bow-left"></div>
+              <div class="gift-box__bow-right"></div>
+            </div>
+          </div>
+          <div class="gift-box__base">
+            <div class="gift-box__ribbon-v"></div>
+          </div>
+          <div class="gift-box__glow"></div>
+        </div>
+
+        <div id="gift-message" class="gift-message glass-card" aria-live="polite">
+          <div class="gift-message__sparkle" aria-hidden="true">💜 ✦ 💜</div>
+          <p class="gift-message__opening">Dear Shahista,</p>
+          <p>I don't know if anyone told you today, so let me be the one to say it —</p>
+          <p>You are genuinely, undeniably, <strong>the best.</strong></p>
+          <p>Not just as a person. Not just as a friend. But as a <strong>human being</strong> — you are rare and extraordinary.</p>
+          <p>The way you exist in this world matters more than you know.</p>
+          <p class="gift-message__highlight">
+            The world is a better place<br />simply because you are in it. 💜
+          </p>
+          <p>Keep being you. Keep shining. Keep being that beautiful soul who makes everything around her brighter.</p>
+          <p>You deserve every good thing that comes your way.</p>
+          <p>Have a wonderful, wonderful day 😊</p>
+          <div class="gift-message__sig dancing">— a friend who truly means every word ✦</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGE GALLERY -->
+    <section class="section gallery-section fade-in-section" id="gallery">
+      <h2 class="section-title">Memory Gallery 💜</h2>
+      <p class="section-sub">Replace the placeholders with your favourite photos ✦</p>
+      <div class="gallery-grid">
+        <div class="gallery-item glass-card">
+          <div class="gallery-placeholder">
+            <span>📷</span>
+            <p>Photo 1</p>
+          </div>
+        </div>
+        <div class="gallery-item glass-card">
+          <div class="gallery-placeholder">
+            <span>📷</span>
+            <p>Photo 2</p>
+          </div>
+        </div>
+        <div class="gallery-item glass-card">
+          <div class="gallery-placeholder">
+            <span>📷</span>
+            <p>Photo 3</p>
+          </div>
+        </div>
+        <div class="gallery-item glass-card">
+          <div class="gallery-placeholder">
+            <span>📷</span>
+            <p>Photo 4</p>
+          </div>
+        </div>
+        <div class="gallery-item glass-card gallery-item--wide">
+          <div class="gallery-placeholder">
+            <span>📷</span>
+            <p>Favourite Memory 💜</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENDING SCREEN -->
+    <section class="section ending-section fade-in-section" id="ending">
+      <div class="ending-card glass-card">
+        <div class="ending-crown">👑</div>
+        <h2 class="ending-title">Always Remember This 💜</h2>
+        <p>You are the <strong>best girl in the world.</strong></p>
+        <p>You are seen. You are appreciated. You are loved.</p>
+        <div class="ending-divider">💜 ✦ 💜</div>
+        <p class="ending-big dancing">Have an amazing day!</p>
+        <p class="ending-sub">Because you deserve nothing less 💜</p>
+        <button class="glow-btn" id="replay-btn">💜 Replay the Magic 💜</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
